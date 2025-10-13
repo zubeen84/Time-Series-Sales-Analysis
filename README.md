@@ -25,9 +25,15 @@ Forecast error is just **3.3%** of observed range, ideal for operational decisio
 Plot compares raw monthly sales with a 3-month rolling average, revealing underlying trends and smoothing out short-term fluctuations in Office Supplies demand.
 ![Office Supplies Sales Trends with rolling average](Office-supplies-sales-with-rolling-average.png)
 
+### SARIMA Model Diagnostics for Office Supplies
+
+The diagnostics validate the model's reliablity through residual analysis, mormality checks, and autocorrelation plots. SARIMA is used for forecasting time series data with seasonality like monthly office supplies sales.
+![SARIMA Model Diagnostics for Office Supplies](SARIMA-Office-Supplies.png)
+
 ### Forecast Error vs Daily Sales Range
-This visual highlights the SARIMA model's precision-forecast error is just 3.3% of the observed daily sales range.
+This visual highlights the SARIMA model's precision-forecast error is just 3.3% of the observed daily sales range. 
 ![Forecast Error vs Daily Sales](Forecast-Error-vs-Daily-Sales-Range-(Office-Supplies).png)
+
 
 ### Forecast for Office Supplies
 This visual shows seasonal patterns in office supplies sales, with forecast accuracy validated over a six-month test window.  As forecasts extend further into the future, the model’s confidence intervals widen, reflecting a natural increase in uncertainty while maintaining credible directional insights.
