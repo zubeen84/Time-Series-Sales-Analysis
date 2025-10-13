@@ -52,4 +52,5 @@ Visual capturing forecast for Furniture sales with Prophet Model.
 
 ## Technology Sales
 
+![Technology Heatmap capturing patterns](monthly-tech-heatmap.png)
 ![Tech Sales Forecast with Prophet Model](tech-forecast-Prophet-Model.png)
