@@ -59,3 +59,5 @@ Visual capturing forecast for Furniture sales with Prophet Model.
 ![Sales Comparison across categories](category-comparison-sales.png)
 
 ![Forcasted sales per category](Forcasted-Sales-by-Category.png)
+
+![Furniture vs Office Sales Trends](Furniture-vs-Office-SalesTrends.png)
