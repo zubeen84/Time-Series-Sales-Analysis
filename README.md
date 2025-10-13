@@ -49,3 +49,7 @@ Visual showing seasonal patterns in furniture sales through a heatmap.
 
 Visual capturing forecast for Furniture sales with Prophet Model.
 ![Furniture Forecast with Prophet](furniture-forcast-prophet.png)
+
+## Technology Sales
+
+![Tech Sales Forecast with Prophet Model](tech-forecast-Prophet-Model.png)
