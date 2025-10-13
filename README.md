@@ -23,4 +23,8 @@ Forecast error is just **3.3%** of observed range, ideal for operational decisio
 
     ## Office Supplies Sales
 
+### Forecast Error vs Daily Sales Range
+This visual highlights the SARIMA model's precision-forecast error is just 3.3% of the observed daily sales range.
 ![Office Supplies Forecast](Forecast-Error-vs-Daily-Sales-Range-(Office-Supplies).png)
+
+
