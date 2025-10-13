@@ -23,3 +23,4 @@ Forecast error is just **3.3%** of observed range, ideal for operational decisio
 
     ## Office Supplies Sales
 
+![Office Supplies Forecast](image/Forecast Error vs Daily Sales Range (Office Supplies).png)
