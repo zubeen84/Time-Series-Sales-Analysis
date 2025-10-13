@@ -32,4 +32,6 @@ This visual shows seasonal patterns in office supplies sales, with forecast accu
 
 ![Office Supplies Forecast](Office-Sales-Forecast.png)
 
-
+### Office Supplies Heatmap
+Monthly sales heatmap revealing seasonal spikes in Office Supplies, with consistent Q4 surges and year-over-year growth patterns. This visual is ideal for identifying peak demand periods and planning inventory cycles.
+![Office Supplies Forecast](Office-Supplies-Heatmap.png)
