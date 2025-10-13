@@ -38,6 +38,7 @@ This visual shows seasonal patterns in office supplies sales, with forecast accu
 Monthly sales heatmap revealing seasonal spikes in Office Supplies, with consistent Q4 surges and year-over-year growth patterns. This visual is ideal for identifying peak demand periods and planning inventory cycles.
 ![Office Supplies Forecast](Office-Supplies-Heatmap.png)
 
+
 ### Monthly Sales Forecast for Office Supplies Using Prophet
 Prophet model captures seasonal patterns and long-term trends in Office supplies sales, offering a 3-year forecast with interpretable uncertainty bands.
 
@@ -50,16 +51,35 @@ Visual showing seasonal patterns in furniture sales through a heatmap.
 Visual capturing forecast for Furniture sales with Prophet Model.
 ![Furniture Forecast with Prophet](furniture-forcast-prophet.png)
 
+Furniture shows a steady upward trend with moderate seasonality. Peaks are visible aroung Q4, likely driven by year-end procurement or budget cycles. Overall it has stable revenue stream and is good for long-term contracts.
+
 ## Technology Sales
 
+Monthly sales heatmap for Technology reveals variable demand patterns with sharp spikes. This volatility underscores the need for agile inventory systems and responsive marketing.
+
 ![Technology Heatmap capturing patterns](monthly-tech-heatmap.png)
+
+### Technology Sales Forecast with Prophet Model
+Prophet model forecasts Technology sales with wide uncertainty bands, reflecting high volatility and unpredictable demand spikes.
 ![Tech Sales Forecast with Prophet Model](tech-forecast-Prophet-Model.png)
 
 # Comparison Across Categories
+### Monthly Sales Comparison Across Categories
+
+Line plot comparing monthly average sales across Office Supplies, Furniture and Technology. The analysis reveals distinct seasonal patterns and volatility levels. Office supplies is in high demand in Q4, Furniture remains steady, and Technology shows erratic surges.
+
 ![Sales Comparison across categories](category-comparison-sales.png)
 
+### Forcasted Sales by Category using Prophet Model
+Next, the visual shows Prophet-generated forecasts for all three categories over a 3-year horizon. This is useful for strategic planning and risk assessment.
 ![Forcasted sales per category](Forcasted-Sales-by-Category.png)
 
+### Furniture vs Office Supplies Sales Trends
+Trend comparison showing Furniture's stable growth vs Office Supplies' seasonal spikes. This visual is ideal for contrasting long-term procurement with tactical inventory planning.
 ![Furniture vs Office Sales Trends](Furniture-vs-Office-SalesTrends.png)
 
+### Technology vs Office Supplies Sales Trends
+Comparing Technology sales with Office supplies reveals distinct demand patterns. While Office supplies follow predictable seasonal cycles, Technology sales are volatile and spike unpredictably. This contrast highlights the need for more tactical marketing strategies and flexible inventory planning in the tech category.
 ![Tech vs Office Supplies Sales Trend](Tech-vs-Office-SalesTrends.png)
+
+Our time series models forecast category-level sales with high precision and clear seasonal patterns. Office Supplies show strong Q4 spikes, Technology is volatile but high-yield, and Furniture remains stable. Forecast confidence intervals are tight for the next 6–12 months, supporting reliable planning. These insights enable targeted inventory, marketing, and procurement strategies across categories.
