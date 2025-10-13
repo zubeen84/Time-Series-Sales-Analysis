@@ -40,3 +40,4 @@ Monthly sales heatmap revealing seasonal spikes in Office Supplies, with consist
 Prophet model captures seasonal patterns and long-term trends in Office supplies sales, offering a 3-year forecast with interpretable uncertainty bands.
 
 ![Monthly Sales Forecast Using Prophet](Office-Forecast-Prophet-Model.png)
+
