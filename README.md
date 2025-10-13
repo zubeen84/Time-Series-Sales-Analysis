@@ -11,7 +11,7 @@ The goal is to provide reliable strategic planning through accurate, interpretab
 Forecast error is just **3.3%** of observed range, ideal for operational decisions.
 * **Forecast Horizon**: 36 months
 * **Validated on**: 6-month test window
-* **Peak Month (Office Supplies)**: December 2016 (Average Monthly Sales: £1,357.06)
+* **Peak Month (Office Supplies)**: December 2016 (Average Monthly Sales: £1,357.06) 
 * **Peak Month (Furniture)**: January 2016 (Average Monthly Sales: £782.66)
 * **Peak Month (Technology)**: March 2014 (Average Monthly Sales: £1,477.78)
 
