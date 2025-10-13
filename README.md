@@ -46,3 +46,6 @@ Prophet model captures seasonal patterns and long-term trends in Office supplies
 ## Furniture Sales
 Visual showing seasonal patterns in furniture sales through a heatmap.
 ![Furniture Sales Heatmap](monthly-furniture-heatmap.png)
+
+Visual capturing forecast for Furniture sales with Prophet Model.
+![Furniture Forecast with Prophet](furniture-forcast-prophet.png)
