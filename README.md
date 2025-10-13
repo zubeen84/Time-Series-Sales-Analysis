@@ -22,6 +22,8 @@ Forecast error is just **3.3%** of observed range, ideal for operational decisio
   -  Technology: Volatile peaks suggests agile inventory and marketing
 
     ## Office Supplies Sales
+Plot compares raw monthly sales with a 3-month rolling average, revealing underlying trends and smoothing out short-term fluctuations in Office Supplies demand.
+![Office Supplies Sales Trends with rolling average](Office-supplies-sales-with-rolling-average.png)
 
 ### Forecast Error vs Daily Sales Range
 This visual highlights the SARIMA model's precision-forecast error is just 3.3% of the observed daily sales range.
