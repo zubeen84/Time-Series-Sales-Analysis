@@ -25,7 +25,7 @@ Forecast error is just **3.3%** of observed range, ideal for operational decisio
 
     ## Office Supplies Sales
 Plot compares raw monthly sales with a 3-month rolling average, revealing underlying trends and smoothing out short-term fluctuations in Office Supplies demand.
-![Office Supplies Sales Trends with rolling average](Office-supplies-sales-with-rolling-average.png)
+![Office Supplies Sales Trends with rolling average](visuals/Office-supplies-sales-with-rolling-average.png)
 
 ### SARIMA Model Diagnostics for Office Supplies
 
