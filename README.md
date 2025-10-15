@@ -24,7 +24,7 @@ Forecast error is just **3.3%** of observed range, ideal for operational decisio
   -  Technology: Volatile peaks suggests agile inventory and marketing
 
     ## Office Supplies Sales
-Plot compares raw monthly sales with a 3-month rolling average, revealing underlying trends and smoothing out short-term fluctuations in Office Supplies demand.
+To understand historical data regarding Office Supplies, this visual effectively compares raw monthly sales with a 3-month rolling average. It reveals underlying trends and smoothes out short-term fluctuations in Office Supplies demand.
 ![Office Supplies Sales Trends with rolling average](visuals/Office-supplies-sales-with-rolling-average.png)
 
 ### SARIMA Model Diagnostics for Office Supplies
