@@ -27,6 +27,11 @@ Forecast error is just **3.3%** of observed range, ideal for operational decisio
 To understand historical data regarding Office Supplies, this visual effectively compares raw monthly sales with a 3-month rolling average. It reveals underlying trends and smoothes out short-term fluctuations in Office Supplies demand.
 ![Office Supplies Sales Trends with rolling average](visuals/Office-supplies-sales-with-rolling-average.png)
 
+### Office Supplies Heatmap
+
+Monthly sales heatmap revealing seasonal spikes in Office Supplies, with consistent Q4 surges and year-over-year growth patterns. This visual is ideal for identifying peak demand periods and planning inventory cycles.
+![Office Supplies Forecast](visuals/Office-Supplies-Heatmap.png)
+
 ### SARIMA Model Diagnostics for Office Supplies
 
 The diagnostics validate the model's reliablity through residual analysis, mormality checks, and autocorrelation plots. SARIMA is used for forecasting time series data with seasonality like monthly office supplies sales.
@@ -44,10 +49,6 @@ This visual highlights the SARIMA model's precision-forecast error is just 3.3% 
 This visual shows seasonal patterns in office supplies sales, with forecast accuracy validated over a six-month test window.  As forecasts extend further into the future, the model’s confidence intervals widen, reflecting a natural increase in uncertainty while maintaining credible directional insights.
 
 ![Office Supplies Forecast](visuals/Office-Sales-Forecast.png)
-
-### Office Supplies Heatmap
-Monthly sales heatmap revealing seasonal spikes in Office Supplies, with consistent Q4 surges and year-over-year growth patterns. This visual is ideal for identifying peak demand periods and planning inventory cycles.
-![Office Supplies Forecast](visuals/Office-Supplies-Heatmap.png)
 
 
 ### Monthly Sales Forecast for Office Supplies Using Prophet
