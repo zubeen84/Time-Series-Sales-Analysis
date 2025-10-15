@@ -1,6 +1,6 @@
 
 # Time Series Analysis
-# Strategic Insights Across Office Supplies, Furniture and Technology Sales
+# Deep-Dive Forecasting for Office Supplies, with Strategic Comparisons Across Furniture and Technology
 
 ## Solution Overview:
 This project delivers a validated forecasting solution for three key products: Office Supplies, Furniture and Sales using SARIMA and Prophet models. 
@@ -39,22 +39,24 @@ The diagnostics validate the model's reliablity through residual analysis, morma
 
 ![SARIMA Model Diagnostics for Office Supplies](visuals/SARIMA-Office-Supplies.png)
 
+### Forecast for Office Supplies
+This visual shows seasonal patterns in office supplies sales, with forecast accuracy validated over a six-month test window.  As forecasts extend further into the future, the model’s confidence intervals widen, reflecting a natural increase in uncertainty while maintaining credible directional insights.
+
+![Office Supplies Forecast](visuals/Office-Sales-Forecast.png)
+
 ### Forecast Error vs Daily Sales Range
 This visual highlights the SARIMA model's precision-forecast error is just 3.3% of the observed daily sales range. 
 
 ![Forecast Error vs Daily Sales](visuals/Forecast-Error-vs-Daily-Sales-Range-(Office-Supplies).png)
 
 
-### Forecast for Office Supplies
-This visual shows seasonal patterns in office supplies sales, with forecast accuracy validated over a six-month test window.  As forecasts extend further into the future, the model’s confidence intervals widen, reflecting a natural increase in uncertainty while maintaining credible directional insights.
-
-![Office Supplies Forecast](visuals/Office-Sales-Forecast.png)
-
 
 ### Monthly Sales Forecast for Office Supplies Using Prophet
 Prophet model captures seasonal patterns and long-term trends in Office supplies sales, offering a 3-year forecast with interpretable uncertainty bands.
 
 ![Monthly Sales Forecast Using Prophet](visuals/Office-Forecast-Prophet-Model.png)
+
+# Comparison Across Categories
 
 ## Furniture Sales
 Visual showing seasonal patterns in furniture sales through a heatmap.
@@ -77,8 +79,8 @@ Monthly sales heatmap for Technology reveals variable demand patterns with sharp
 Prophet model forecasts Technology sales with wide uncertainty bands, reflecting high volatility and unpredictable demand spikes.
 ![Tech Sales Forecast with Prophet Model](visuals/tech-forecast-Prophet-Model.png)
 
-# Comparison Across Categories
-### Monthly Sales Comparison Across Categories
+
+### Monthly Sales Comparison 
 
 Line plot comparing monthly average sales across Office Supplies, Furniture and Technology. The analysis reveals distinct seasonal patterns and volatility levels. Office supplies is in high demand in Q4, Furniture remains steady, and Technology shows erratic surges.
 
