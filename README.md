@@ -1,5 +1,5 @@
 # Time Series Sales Analysis
-### Full SARIMA and Prophet modelling pipeline across three product categories - foundation for live forecasting dashboard
+### Full SARIMA and Prophet modelling pipeline across three product categories. Foundation for live forecasting dashboard
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![SARIMA](https://img.shields.io/badge/Model-SARIMA-blue)
@@ -210,7 +210,7 @@ stakeholders.
 
 ## Related Projects
 
-**Part 2 — Live Dashboard:**
+**Part 2 - Live Dashboard:**
 [Sales Forecasting Dashboard](https://github.com/zubeen84/sales_forecasting_dashboard) 
 - Streamlit and Plotly dashboard consuming forecast outputs 
 from this notebook
