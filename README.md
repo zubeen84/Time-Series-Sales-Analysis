@@ -1,103 +1,254 @@
+# Time Series Sales Analysis
+### Full SARIMA and Prophet modelling pipeline across three product categories - foundation for live forecasting dashboard
 
-# Time Series Analysis
-# Deep-Dive Forecasting for Office Supplies, with Strategic Comparisons Across Furniture and Technology
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![SARIMA](https://img.shields.io/badge/Model-SARIMA-blue)
+![Prophet](https://img.shields.io/badge/Model-Prophet-orange)
+![Notebook](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=flat&logo=jupyter&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Governance](https://img.shields.io/badge/Design-ISO%2042001%20Aligned-742774?style=flat)
 
-## Solution Overview:
-This project delivers a validated forecasting solution for three key products: Office Supplies, Furniture and Sales using SARIMA and Prophet models. 
+---
 
-The goal is to provide reliable strategic planning through accurate, interpretable forecasts.
-* **SARIMA RMSE**: £332.37
-* **Daily Sales Range**: £10,140.57
-Forecast error is just **3.3%** of observed range, ideal for operational decisions.
-* **Forecast Horizon**: 36 months
-* **Validated on**: 6-month test window
-* **Peak Month (Office Supplies)**: December 2016 (Average Monthly Sales: £1,357.06) 
-* **Peak Month (Furniture)**: January 2016 (Average Monthly Sales: £782.66)
-* **Peak Month (Technology)**: March 2014 (Average Monthly Sales: £1,477.78)
+## At a Glance
 
-## Business Impact:
-* **Inventory Optimization:** Validated forecasts reveal seasonal demand spikes, especially in Q4 for Office Supplies and Q1 for Furniture enabling precise stock planning and reduced overstock risk.
-* **Executive Reporting:** Visuals are designed for clarity, translating RMSE, sales ranges and forecast uncertainty into digestible insights for non-technical stakeholders.
-* **Category-wise Strategy:** Comparative trend analysis across various categories uncovers distinct sales behaviours:
-  -  Office Supplies: Seasonal surges suggests tactical promotions
-  -  Furniture: Overall stable growth suggests long-term contracts
-  -  Technology: Volatile peaks suggests agile inventory and marketing
+| | |
+|---|---|
+| **Dataset** | Superstore Sales - 9,994 transactions across 4 years |
+| **Scope** | Three categories: Office Supplies, Furniture, Technology |
+| **Models** | SARIMA (grid search, AIC-selected) and Facebook Prophet |
+| **Forecast horizon** | 36 months with 95% confidence intervals |
+| **Validation** | 6-month hold-out test window |
+| **SARIMA accuracy** | RMSE £332.37 - 3.3% of observed daily sales range |
+| **Output** | Pre-computed forecast CSVs consumed by live Streamlit dashboard |
 
-    ## Office Supplies Sales
-To understand historical data regarding Office Supplies, this visual effectively compares raw monthly sales with a 3-month rolling average. It reveals underlying trends and smoothes out short-term fluctuations in Office Supplies demand.
-![Office Supplies Sales Trends with rolling average](visuals/Office-supplies-sales-with-rolling-average.png)
+---
 
-### Office Supplies Heatmap
+## Project Overview
 
-Monthly sales heatmap revealing seasonal spikes in Office Supplies, with consistent Q4 surges and year-over-year growth patterns. This visual is ideal for identifying peak demand periods and planning inventory cycles.
-![Office Supplies Forecast](visuals/Office-Supplies-Heatmap.png)
+This notebook delivers the full analytical and modelling pipeline 
+for a validated sales forecasting solution across three product 
+categories. Both SARIMA and Prophet models are trained, evaluated, 
+and compared on the same hold-out window.
 
-### SARIMA Model Diagnostics for Office Supplies
+Forecast outputs are exported as structured CSVs and consumed by 
+a decoupled Streamlit dashboard reflecting a two-tier production 
+architecture where the modelling layer and presentation layer are 
+always separated.
 
-The diagnostics validate the model's reliablity through residual analysis, mormality checks, and autocorrelation plots. SARIMA is used for forecasting time series data with seasonality like monthly office supplies sales.
+**This is Part 1 of a two-part project. See the live dashboard in 
+the Related Projects section below.**
 
+---
 
-![SARIMA Model Diagnostics for Office Supplies](visuals/SARIMA-Office-Supplies.png)
+## Modelling Pipeline
 
-### Forecast for Office Supplies
-This visual shows seasonal patterns in office supplies sales, with forecast accuracy validated over a six-month test window.  As forecasts extend further into the future, the model’s confidence intervals widen, reflecting a natural increase in uncertainty while maintaining credible directional insights.
+### Data Preparation
+- 9,994 transactions aggregated to monthly frequency per category
+- Missing months imputed with category median
+- Stationarity tested using Augmented Dickey-Fuller test
+
+### SARIMA
+- Grid search over (p,d,q)(P,D,Q,s) parameter space
+- Model selected by minimising AIC across validation window
+- Residual diagnostics: normality, autocorrelation, heteroscedasticity
+- RMSE: £332.37 (3.3% of observed daily sales range)
+
+### Facebook Prophet
+- Additive seasonality with yearly components
+- Automatic changepoint detection for trend shifts
+- Uncertainty intervals at 95% confidence level
+- 36-month forecast horizon
+
+### Model Selection Rationale
+Both models were evaluated on the same 6-month hold-out window. 
+Prophet was selected as the primary forecast output for the 
+dashboard due to its superior handling of irregular seasonality 
+and automatic uncertainty quantification both critical for 
+business planning applications.
+
+---
+
+## Results by Category
+
+| Category | Peak Month | Avg Monthly Sales | Pattern | Strategic Recommendation |
+|----------|-----------|-------------------|---------|--------------------------|
+| Office Supplies | December | £1,357 | Strong Q4 seasonality | Tactical Q3 stock build |
+| Furniture | January | £783 | Stable upward trend | Long-term procurement contracts |
+| Technology | March | £1,478 | High volatility | Agile inventory management |
+
+Confidence window: 6-12 months for operational decisions, 
+24-36 months for strategic directional planning only.
+
+---
+
+## Analysis - Office Supplies
+
+Office Supplies is the primary focus of this analysis, with 
+Furniture and Technology included for cross-category comparison.
+
+### Sales trend with rolling average
+Raw monthly sales compared with a 3-month rolling average to 
+reveal underlying trends and smooth short-term fluctuations.
+
+![Office Supplies Sales Trends](visuals/Office-supplies-sales-with-rolling-average.png)
+
+### Seasonal heatmap
+Monthly heatmap revealing consistent Q4 demand surges and 
+year-over-year growth. Useful for identifying peak periods 
+and planning inventory cycles.
+
+![Office Supplies Heatmap](visuals/Office-Supplies-Heatmap.png)
+
+### SARIMA model diagnostics
+Residual analysis, normality checks, and autocorrelation plots 
+confirming model reliability before forecast generation.
+
+![SARIMA Diagnostics](visuals/SARIMA-Office-Supplies.png)
+
+### SARIMA forecast
+Seasonal patterns validated over a 6-month test window. 
+Confidence intervals widen appropriately over longer horizons, 
+reflecting increasing uncertainty while maintaining directional 
+credibility.
 
 ![Office Supplies Forecast](visuals/Office-Sales-Forecast.png)
 
-### Forecast Error vs Daily Sales Range
-This visual highlights the SARIMA model's precision-forecast error is just 3.3% of the observed daily sales range. 
+### Forecast error vs daily sales range
+SARIMA forecast error of £332.37 represents 3.3% of the 
+observed daily sales range confirming precision suitable 
+for operational planning decisions.
 
-![Forecast Error vs Daily Sales](visuals/Forecast-Error-vs-Daily-Sales-Range-(Office-Supplies).png)
+![Forecast Error](visuals/Forecast-Error-vs-Daily-Sales-Range-(Office-Supplies).png)
 
+### Prophet forecast
+Prophet model capturing seasonal patterns and long-term trends 
+with interpretable uncertainty bands across a 36-month horizon.
 
+![Prophet Forecast](visuals/Office-Forecast-Prophet-Model.png)
 
-### Monthly Sales Forecast for Office Supplies Using Prophet
-Prophet model captures seasonal patterns and long-term trends in Office supplies sales, offering a 3-year forecast with interpretable uncertainty bands.
+---
 
-![Monthly Sales Forecast Using Prophet](visuals/Office-Forecast-Prophet-Model.png)
+## Cross-Category Comparison
 
-# Comparison Across Categories
+### Furniture
+Stable upward trend with moderate seasonality. Q4 peaks likely 
+driven by year-end procurement cycles. Suited to long-term 
+contract planning rather than tactical stock management.
 
-## Furniture Sales
-Visual showing seasonal patterns in furniture sales through a heatmap.
+![Furniture Heatmap](visuals/monthly-furniture-heatmap.png)
+![Furniture Prophet Forecast](visuals/furniture-forcast-prophet.png)
 
-![Furniture Sales Heatmap](visuals/monthly-furniture-heatmap.png)
+### Technology
+High volatility with unpredictable demand spikes. Wide 
+Prophet uncertainty bands reflect the category's erratic 
+nature. Requires agile inventory systems and responsive 
+marketing rather than fixed procurement schedules.
 
-Visual capturing forecast for Furniture sales with Prophet Model.
+![Technology Heatmap](visuals/monthly-tech-heatmap.png)
+![Technology Prophet Forecast](visuals/tech-forecast-Prophet-Model.png)
 
-![Furniture Forecast with Prophet](visuals/furniture-forcast-prophet.png)
+### Monthly sales comparison across all categories
+Line plot showing distinct seasonal patterns and volatility 
+levels across all three categories. Q4 concentration in 
+Office Supplies, stability in Furniture, erratic surges 
+in Technology.
 
-Furniture shows a steady upward trend with moderate seasonality. Peaks are visible aroung Q4, likely driven by year-end procurement or budget cycles. Overall it has stable revenue stream and is good for long-term contracts.
+![Category Comparison](visuals/category-comparison-sales.png)
 
-## Technology Sales
+### 36-month Prophet forecasts by category
+Comparative forecast across all three categories for 
+strategic planning and risk assessment.
 
-Monthly sales heatmap for Technology reveals variable demand patterns with sharp spikes. This volatility underscores the need for agile inventory systems and responsive marketing.
+![Forecasted Sales by Category](visuals/Forcasted-Sales-by-Category.png)
 
-![Technology Heatmap capturing patterns](visuals/monthly-tech-heatmap.png)
+### Furniture vs Office Supplies trend
+Contrasting Furniture's stable growth with Office Supplies' 
+seasonal spikes illustrating the difference between 
+long-term procurement and tactical inventory planning.
 
-### Technology Sales Forecast with Prophet Model
-Prophet model forecasts Technology sales with wide uncertainty bands, reflecting high volatility and unpredictable demand spikes.
-![Tech Sales Forecast with Prophet Model](visuals/tech-forecast-Prophet-Model.png)
+![Furniture vs Office Trends](visuals/Furniture-vs-Office-SalesTrends.png)
 
+### Technology vs Office Supplies trend
+Technology's unpredictable spikes against Office Supplies' 
+predictable seasonal cycles highlighting the need for 
+distinct inventory and marketing strategies per category.
 
-### Monthly Sales Comparison 
+![Technology vs Office Trends](visuals/Tech-vs-Office-SalesTrends.png)
 
-Line plot comparing monthly average sales across Office Supplies, Furniture and Technology. The analysis reveals distinct seasonal patterns and volatility levels. Office supplies is in high demand in Q4, Furniture remains steady, and Technology shows erratic surges.
+---
 
-![Sales Comparison across categories](visuals/category-comparison-sales.png)
+## Business Impact
 
-### Forcasted Sales by Category using Prophet Model
-Next, the visual shows Prophet-generated forecasts for all three categories over a 3-year horizon. This is useful for strategic planning and risk assessment.
-![Forcasted sales per category](visuals/Forcasted-Sales-by-Category.png)
+**Inventory optimisation:** Validated seasonal patterns enable 
+precise stock planning and reduced overstock risk, particularly 
+Q4 for Office Supplies and Q1 for Furniture.
 
-### Furniture vs Office Supplies Sales Trends
-Trend comparison showing Furniture's stable growth vs Office Supplies' seasonal spikes. This visual is ideal for contrasting long-term procurement with tactical inventory planning.
+**Cross-category strategy:** Distinct demand behaviours across 
+three categories support differentiated procurement approaches: 
+tactical for Office Supplies, contractual for Furniture, 
+flexible for Technology.
 
-![Furniture vs Office Sales Trends](visuals/Furniture-vs-Office-SalesTrends.png)
+**Executive-ready output:** Forecast uncertainty expressed as 
+confidence intervals rather than raw error metrics, translating 
+model outputs into actionable planning guidance for non-technical 
+stakeholders.
 
-### Technology vs Office Supplies Sales Trends
-Comparing Technology sales with Office supplies reveals distinct demand patterns. While Office supplies follow predictable seasonal cycles, Technology sales are volatile and spike unpredictably. This contrast highlights the need for more tactical marketing strategies and flexible inventory planning in the tech category.
+---
 
-![Tech vs Office Supplies Sales Trend](visuals/Tech-vs-Office-SalesTrends.png)
+## Skills Demonstrated
 
-Our time series models forecast category-level sales with high precision and clear seasonal patterns. Office Supplies show strong Q4 spikes, Technology is volatile but high-yield, and Furniture remains stable. Forecast confidence intervals are tight for the next 6–12 months, supporting reliable planning. These insights enable targeted inventory, marketing, and procurement strategies across categories.
+`Python` `SARIMA` `Facebook Prophet` `Statsmodels` `Pandas` `NumPy`  
+`Matplotlib` `Seaborn` `Time Series Analysis` `Seasonal Decomposition`  
+`Stationarity Testing` `Augmented Dickey-Fuller` `Grid Search`  
+`AIC Model Selection` `Residual Diagnostics` `Hold-out Validation`  
+`Uncertainty Quantification` `Demand Forecasting` `Rolling Average`  
+`Cross-Category Analysis` `Business Intelligence` `Strategic Planning`  
+`Production ML Architecture` `ISO 42001` `Responsible AI`
+
+---
+
+## Related Projects
+
+**Part 2 — Live Dashboard:**
+[Sales Forecasting Dashboard](https://github.com/zubeen84/sales_forecasting_dashboard) 
+- Streamlit and Plotly dashboard consuming forecast outputs 
+from this notebook
+
+[Live App](https://salesforecastingdashboard-2rhmw5d3ejmqsnbxrbmu9j.streamlit.app/)
+
+**Other projects:**
+[Diabetes Risk Predictor](https://github.com/zubeen84/diabetes_risk_predictor) 
+- Live ML classification app with ISO 42001 governance
+
+---
+
+## Run Locally
+
+```bash
+git clone https://github.com/zubeen84/Time-Series-Sales-Analysis.git
+cd Time-Series-Sales-Analysis
+pip install -r requirements.txt
+jupyter notebook
+```
+
+---
+
+## Disclaimer
+
+Forecasts are generated from historical sales patterns and are 
+provided for planning purposes only. They do not constitute 
+financial or procurement advice. Always validate against current 
+market conditions and domain expertise before making operational 
+decisions.
+
+---
+
+## Author
+
+**Zubeen Khalid**
+MSc Applied Data Science - Anglia Ruskin University
+ISO 42001 Certified | AI+ Foundation | Prompt Engineering Level 1
+
+[LinkedIn](https://www.linkedin.com/in/zubeenkhalid) · 
+[GitHub](https://github.com/zubeen84)
